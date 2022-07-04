@@ -1,0 +1,10 @@
+.board {
+    border-top: 1px solid #EBF1FB;
+    border-right: 1px solid #EBF1FB;
+    border-radius: 0.4rem;
+    display: block;
+    height:36.1rem;
+    margin: 0 auto;
+    position: relative;
+    width: 36.1rem;
+}

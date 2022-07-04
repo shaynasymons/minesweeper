@@ -1,6 +1,6 @@
 # Minesweeper in React
 
-To use this app, first install node. Then, download or clone this repository.\
+To use this app, first install node. Then, download or clone this repository.
 
 ## Available Scripts
 
@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm install`
 
-Installs the app dependencies.  Run this once when you first set up your local repository.\ 
+Installs the app dependencies.  Run this once when you first set up your local repository. 
 
 
 ### `npm start`
