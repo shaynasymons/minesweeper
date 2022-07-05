@@ -16,13 +16,12 @@ const seedTiles = (arr, mode) => {
         }
     }
 
-  return arr;
+    return arr;
 }
-
-function MineSweeper() {
-    const [mode, setMode] = React.useState(9);
+const MineSweeper = (props) => { 
     const [modeDisabled, setModeDisabled] = React.useState(false);
     const [resetGame, setResetGame] = React.useReducer(x => x + 1, 0);
+    const [mode, setMode] = React.useState(9);
     const [tiles, setTiles] = React.useState([]);
 
     React.useEffect(() => {
@@ -42,19 +41,19 @@ function MineSweeper() {
                 r++;
                 c = 0;
             }
-          
+           
         }
         let seededTiles = seedTiles(tilesArr, mode);
         setTiles(seededTiles);
-  }, [mode]);
+    }, [mode, resetGame]);
+
+    const updateModeDisabled = _ => { 
+        setModeDisabled(true);
+    }
 
     const changeModeHandler = e => {
         setMode(Number(e.target.value));
     };
-  
-    const updateModeDisabled = _ => { 
-        setModeDisabled(true);
-    }
 
     const resetGameHandler = _ => { 
         setResetGame();
@@ -64,7 +63,7 @@ function MineSweeper() {
     return (
         <React.Fragment>
             <Controls mode={mode} disabled={modeDisabled} resetGameHandler={resetGameHandler} changeModeHandler={changeModeHandler} />
-            <Board key={resetGame} mode={mode} tiles={tiles} updateModeDisabled={updateModeDisabled} gameOver={resetGameHandler} />
+            <Board key={resetGame} mode={mode} updateModeDisabled={updateModeDisabled} gameOver={resetGameHandler} tiles={tiles} />
         </React.Fragment>
     );
 }

@@ -13,7 +13,7 @@ const Controls = (props) => {
     
     return (
         <form className={classes.controls_form}>
-            <Select label="Difficulty Level:" id="mode" value={props.mode} onChange={props.changeModeHandler} disabled={props.modeDisabled} options={modeOptions} />
+            <Select label="Difficulty Level:" id="mode" value={props.mode} onChange={props.changeModeHandler} disabled={props.disabled} options={modeOptions} />
             <Button type="button" text="New Game" onClick={props.resetGameHandler} />
         </form>
     );
