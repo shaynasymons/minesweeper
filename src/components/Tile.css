@@ -20,4 +20,4 @@
     background: #1E4488;
     transition: all linear 0.2s;
 }
-.tile:nth-of-type(1):after {content: '?';background: #008280;}
+.tile.show:after {content: '?';background: #008280;}

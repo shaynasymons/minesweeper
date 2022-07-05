@@ -6,6 +6,7 @@ import './MineSweeper.css';
 
 function MineSweeper() {
     const [mode, setMode] = React.useState(9); //Eventually will be updated based off user selection
+    const [modeDisabled, setModeDisabled] = React.useState(false);
     const [tiles, setTiles] = React.useState([]);
 
     React.useEffect(() => {
@@ -34,6 +35,10 @@ function MineSweeper() {
     setMode(Number(e.target.value));
   };
   
+  const updateModeDisabled = _ => { 
+    setModeDisabled(true);
+  }
+
   const modeOptions = [
     {value: 9, text: 'Beginner'},
     {value: 16, text: 'Intermediate'},
@@ -43,9 +48,9 @@ function MineSweeper() {
   return (
     <React.Fragment>
       <div className="controls">
-        <Select id="mode" value={mode} label="Difficulty Level:" onChange={changeModeHandler} options={modeOptions} />
+        <Select id="mode" value={mode} label="Difficulty Level:" onChange={changeModeHandler} options={modeOptions} disabled={modeDisabled} />
       </div>
-      <Board mode={mode} tiles={tiles} />
+      <Board mode={mode} tiles={tiles} updateModeDisabled={updateModeDisabled} />
     </React.Fragment>
   );
 }
