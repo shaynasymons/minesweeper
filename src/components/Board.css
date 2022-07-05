@@ -2,9 +2,10 @@
     border-top: 1px solid #EBF1FB;
     border-right: 1px solid #EBF1FB;
     border-radius: 0.4rem;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 0 auto;
-    position: relative;
 }
 .board-9 {height: 36.1rem;width: 36.1rem;}
 .board-16 {height: 64.1rem;width: 64.1rem;}
