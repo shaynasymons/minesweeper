@@ -1,0 +1,9 @@
+.controls_button {
+    background: #008280;
+    border: 0px solid transparent;
+    border-radius: 0.4rem;
+    color: #fff;
+    font-size: 1.4rem;
+    height: 3rem;
+    width: 11rem;
+}

@@ -21,3 +21,4 @@
     transition: all linear 0.2s;
 }
 .tile.show:after {content: '?';background: #008280;}
+.tile.show.mine:after {content: '\1F4A3';background: #0199D6;}
