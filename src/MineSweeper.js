@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './components/Board';
+import Select from './components/UI/Select';
 
 import './MineSweeper.css';
 
@@ -29,11 +30,24 @@ function MineSweeper() {
       setTiles(tilesArr);
   }, [mode]);
 
-    return (
-        <React.Fragment>
-            <Board mode={mode} tiles={tiles} />
-        </React.Fragment>
-    );
+  const changeModeHandler = e => {
+    setMode(Number(e.target.value));
+  };
+  
+  const modeOptions = [
+    {value: 9, text: 'Beginner'},
+    {value: 16, text: 'Intermediate'},
+    {value: 25, text: 'Advanced'},
+  ];
+
+  return (
+    <React.Fragment>
+      <div className="controls">
+        <Select id="mode" value={mode} label="Difficulty Level:" onChange={changeModeHandler} options={modeOptions} />
+      </div>
+      <Board mode={mode} tiles={tiles} />
+    </React.Fragment>
+  );
 }
 
 export default MineSweeper;
