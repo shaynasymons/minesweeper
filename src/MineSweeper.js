@@ -2,8 +2,13 @@ import React from 'react';
 import Controls from './components/Controls';
 import Board from './components/Board';
 
-import './MineSweeper.css';
-
+/**
+ * Returns tiles array randomly seeded with mines.
+ *
+ * @param {Array} arr The initial tiles array without mines.
+ * @param {number} mode The selected mode as a number value.
+ * @return {Array} Tiles array seeded with mines.
+ **/
 const seedTiles = (arr, mode) => {
     let minesSeeded = 0; 
     let tilesCount = arr.length;
@@ -18,7 +23,7 @@ const seedTiles = (arr, mode) => {
 
     return arr;
 }
-const MineSweeper = (props) => { 
+const MineSweeper = _ => { 
     const [modeDisabled, setModeDisabled] = React.useState(false);
     const [resetGame, setResetGame] = React.useReducer(x => x + 1, 0);
     const [mode, setMode] = React.useState(9);
@@ -47,14 +52,23 @@ const MineSweeper = (props) => {
         setTiles(seededTiles);
     }, [mode, resetGame]);
 
+    /**
+     * Disabled mode selection after first tile click.
+     **/
     const updateModeDisabled = _ => { 
         setModeDisabled(true);
     }
 
+    /**
+     * Update mode upon selection.
+     **/
     const changeModeHandler = e => {
         setMode(Number(e.target.value));
     };
 
+    /**
+     * Reset the game.
+     **/
     const resetGameHandler = _ => { 
         setResetGame();
         setModeDisabled(false);

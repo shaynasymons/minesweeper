@@ -20,5 +20,22 @@
     background: #1E4488;
     transition: all linear 0.2s;
 }
-.tile.show:after {content: '?';background: #008280;}
+.tile:nth-of-type(1), .tile:nth-of-type(1):after {border-top-left-radius: 0.4rem;}
+.tile:nth-last-of-type(1), .tile:nth-last-of-type(1):after {border-bottom-right-radius: 0.4rem;}
+.board-9 .tile:nth-of-type(9), .board-16 .tile:nth-of-type(16), 
+.board-25 .tile:nth-of-type(25), .board-9 .tile:nth-of-type(9):after, 
+.board-16 .tile:nth-of-type(16):after, .board-25 .tile:nth-of-type(25):after {border-top-right-radius: 0.4rem;}
+.board-9 .tile:nth-last-of-type(9), .board-16 .tile:nth-last-of-type(16), 
+.board-25 .tile:nth-last-of-type(25), .board-9 .tile:nth-last-of-type(9):after, 
+.board-16 .tile:nth-last-of-type(16):after, .board-25 .tile:nth-last-of-type(25):after {border-bottom-left-radius: 0.4rem;}
+.tile.show:after {background: #008280;}
+.tile.show.count-0:after {content: '0';}
+.tile.show.count-1:after {content: '1';}
+.tile.show.count-2:after {content: '2';}
+.tile.show.count-3:after {content: '3';}
+.tile.show.count-4:after {content: '4';}
+.tile.show.count-5:after {content: '5';}
+.tile.show.count-6:after {content: '6';}
+.tile.show.count-7:after {content: '7';}
+.tile.show.count-8:after {content: '8';}
 .tile.show.mine:after {content: '\1F4A3';background: #0199D6;}
