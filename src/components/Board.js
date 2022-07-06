@@ -135,13 +135,14 @@ const Board = props => {
 
             e.currentTarget.classList.remove('hide');
             e.currentTarget.classList.add('show', 'count-' + tileNeighborsMineCount);
+            
+            showTileNeighbors(tileNeighbors); //show this tile's neighbors
 
             if (isMine) {
                 e.currentTarget.classList.add('mine');
                 setGameIsOver(true); //show the game over modal
             } 
 
-            showTileNeighbors(tileNeighbors); //show this tile's neighbors
         }
     }
 
